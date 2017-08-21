@@ -1,0 +1,6 @@
+ara
+pymysql
+ping
+docker
+testinfra
+awscli

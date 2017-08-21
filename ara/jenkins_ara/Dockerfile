@@ -8,7 +8,8 @@ RUN apt-get install -y ansible
 RUN apt-get purge -y python-pip
 RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python ./get-pip.py
-RUN apt-get install -y gcc python-dev libffi-dev libssl-dev python-pip
-RUN pip install ara pymysql
+RUN apt-get install -y gcc python-dev libffi-dev libssl-dev python-pip python-netaddr
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install -r /tmp/requirements.txt
 COPY ansible.cfg /etc/ansible
 USER jenkins
